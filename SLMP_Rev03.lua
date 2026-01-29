@@ -65,12 +65,12 @@ local protocol_port_names = {
 }
 
 if(cmddata_analyze) then
-	dofile(DATA_DIR.."/plugins/SLMP_com_Rev03.lua")	-- [SLMP_com.lua] Directory path
+	require("SLMP_com_Rev03")	-- [SLMP_com.lua] Directory path
 end
 
 -- First try to load the MELSEC helper module
 local melsec_helper_loaded = pcall(function() 
-    dofile(DATA_DIR.."/plugins/melsec_helper.lua")
+    require("melsec_helper")
 end)
 
 -- Create a fallback if melsec_helper.lua couldn't be loaded
@@ -413,4 +413,5 @@ slm_proto.prefs.detailed_melsec = Pref.bool("Detailed MELSEC Analysis", true,
     "Whether to show detailed analysis for MELSEC packets")
 slm_proto.prefs.detailed_slmp = Pref.bool("Detailed SLMP Analysis", true,
     "Whether to show detailed analysis for SLMP packets")
+
 
