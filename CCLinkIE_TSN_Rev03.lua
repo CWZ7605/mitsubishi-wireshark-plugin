@@ -28,7 +28,7 @@ local CCIETSN_SDCRC_SZ			= 4
 local CCIETSN_HEADER_DATA_SZ	= 6
 local CCIETSN_HEADER_TEST		= 14
 
-dofile(DATA_DIR.."/plugins/SLMP_com_Rev03.lua")	-- [SLMP_com.lua] Directory path
+require("SLMP_com_Rev03")	-- [SLMP_com.lua] Directory path
 
 function bitval(num, d)
 	local mask = bit.lshift(0x1, d)
@@ -1436,3 +1436,4 @@ function Disp_myPortFilterStatus_help(buffer, tree, portnum)
 			unused1, portnum+1, unused1))
 
 end
+
