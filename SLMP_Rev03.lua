@@ -29,6 +29,7 @@ user_specific_port = { 45239 }
 -- Protocol-specific port definitions
 local SLMP_PORT = 2000
 local MELSEC_PORT = 5562
+local UDF_PORT = 1025
 -- ###########################################################################
 
 -- Add bit manipulation library compatibility
@@ -384,6 +385,7 @@ end
 
 -- SLMP Analyze port list (UDP)
 local portNo_udp_List = {
+	UDF_PORT,    -- User Defined Port
 	5000,
 	5005,
 	5010,
@@ -399,8 +401,9 @@ end
 
 -- SLMP/MELSEC Analyze port list (TCP)
 local portNo_tcp_List = {
-	2000,       -- SLMP port
+	SLMP_PORT,   -- SLMP port
 	MELSEC_PORT, -- MELSEC port
+	UDF_PORT,    -- User Defined Port
 	5011,
 	61442,
 }
@@ -413,5 +416,6 @@ slm_proto.prefs.detailed_melsec = Pref.bool("Detailed MELSEC Analysis", true,
     "Whether to show detailed analysis for MELSEC packets")
 slm_proto.prefs.detailed_slmp = Pref.bool("Detailed SLMP Analysis", true,
     "Whether to show detailed analysis for SLMP packets")
+
 
 
