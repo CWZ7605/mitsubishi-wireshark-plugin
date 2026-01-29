@@ -13,7 +13,7 @@ A comprehensive collection of Wireshark dissectors for Mitsubishi industrial pro
 ## Installation
 
 1. Create a plugins directory in your Wireshark personal configuration folder if it doesn't exist:
-   - Windows: `%APPDATA%\Wireshark\plugins\`
+   - Windows: `C:\Program Files\Wireshark\plugins`
    - Linux: `~/.local/lib/wireshark/plugins/`
    - macOS: `~/.config/wireshark/plugins/`
 
@@ -60,4 +60,5 @@ Request:
 Response:
 
 ![alt text](/image/response.png "Response")
+
 
